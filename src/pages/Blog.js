@@ -26,15 +26,16 @@ const Blog = () => {
       <h1>Blog</h1>
       <p>The following is a list of blogs obtained through the fetch API:</p>
 
-      {loading && <i>Loading...</i>}
-      {!loading && (
+      {loading ? (
+        <i>Loading...</i>
+      ) : (
         <div>
           {blogs.map((blog) => (
             <article key={blog.id}>
               <h2>
                 <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
               </h2>
-              <date>{new Date(blog.publishedAt).toLocaleDateString()}</date>
+              <time>{new Date(blog.publishedAt).toLocaleDateString()}</time>
             </article>
           ))}
         </div>
