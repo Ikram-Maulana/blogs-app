@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -30,8 +31,10 @@ const Blog = () => {
         <div>
           {blogs.map((blog) => (
             <article key={blog.id}>
-              <h2>{blog.title}</h2>
-              <p>{blog.summary}</p>
+              <h2>
+                <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
+              </h2>
+              <date>{new Date(blog.publishedAt).toLocaleDateString()}</date>
             </article>
           ))}
         </div>
