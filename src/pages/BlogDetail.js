@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import NotFound from "./NotFound";
 
 const BlogDetail = () => {
-  const [Blog, setBlog] = useState({});
+  const [blog, setBlog] = useState({});
   const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -16,11 +18,16 @@ const BlogDetail = () => {
         setBlog(response.data);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.clear();
+        setNotFound(true);
       }
     };
     getBlog();
   }, [id]);
+
+  if (notFound) {
+    return <NotFound />;
+  }
 
   return (
     <section>
@@ -29,14 +36,14 @@ const BlogDetail = () => {
       ) : (
         <div>
           <article>
-            <h2>{Blog.title}</h2>
-            <time>{new Date(Blog.publishedAt).toLocaleDateString()}</time>
-            <img src={Blog.imageUrl} alt={Blog.title} />
-            <p>{Blog.summary}</p>
+            <h2>{blog.title}</h2>
+            <time>{new Date(blog.publishedAt).toLocaleDateString()}</time>
+            <img src={blog.imageUrl} alt={blog.title} />
+            <p>{blog.summary}</p>
             <p>
               Source:{" "}
-              <a href={Blog.url} target="_blank" rel="noreferrer">
-                {Blog.newsSite}
+              <a href={blog.url} target="_blank" rel="noreferrer">
+                {blog.newsSite}
               </a>
             </p>
           </article>
