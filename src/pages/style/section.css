@@ -1,0 +1,7 @@
+.section-title {
+  @apply text-2xl font-bold mb-4;
+}
+
+.section-description {
+  @apply leading-6;
+}

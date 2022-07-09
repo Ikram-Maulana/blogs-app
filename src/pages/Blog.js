@@ -22,7 +22,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section>
+    <section className="p-5">
       <h1>Blog</h1>
       <p>The following is a list of blogs obtained through the fetch API:</p>
 

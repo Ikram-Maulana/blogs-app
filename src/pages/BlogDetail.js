@@ -30,7 +30,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <section>
+    <section className="p-5">
       {loading ? (
         <i>Loading...</i>
       ) : (

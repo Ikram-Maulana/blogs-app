@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import NavbarApp from "./components/NavbarApp";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Contact from "./pages/Contact";
@@ -10,23 +10,11 @@ import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="max-w-[640px] mx-auto bg-white min-h-screen dark:bg-slate-700 dark:text-slate-200">
+      <header>
+        <NavbarApp />
+      </header>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="profile" element={<Profile />} />
