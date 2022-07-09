@@ -8,7 +8,13 @@ const Contact = () => {
       <p className="section-description">Get in touch with me</p>
       <div className="my-2">
         <ListGroup>
-          <ListGroup.Item>Email: ikram_maulana@onedrive.web.id</ListGroup.Item>
+          <ListGroup.Item
+            style={{
+              textAlign: "left",
+            }}
+          >
+            Email: ikram_maulana@onedrive.web.id
+          </ListGroup.Item>
         </ListGroup>
       </div>
       <p className="section-description">Social media</p>
