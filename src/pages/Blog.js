@@ -23,19 +23,26 @@ const Blog = () => {
 
   return (
     <section className="p-5">
-      <h1>Blog</h1>
-      <p>The following is a list of blogs obtained through the fetch API:</p>
+      <h1 className="section-title">Blog</h1>
+      <p className="section-description mb-4">
+        The following is a list of blogs obtained through the fetch API:
+      </p>
 
       {loading ? (
         <i>Loading...</i>
       ) : (
-        <div>
+        <div className="border-t-[1px] border-solid border-[#eee]">
           {blogs.map((blog) => (
-            <article key={blog.id}>
-              <h2>
+            <article
+              key={blog.id}
+              className="border-b-[1px] border-solid border-[#eee] py-5 px-0"
+            >
+              <h2 className="font-bold text-xl hover:text-blue-700 mb-2">
                 <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
               </h2>
-              <time>{new Date(blog.publishedAt).toLocaleDateString()}</time>
+              <time className="text-[#999] text-xs">
+                {new Date(blog.publishedAt).toLocaleDateString()}
+              </time>
             </article>
           ))}
         </div>
