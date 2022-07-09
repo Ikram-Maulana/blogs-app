@@ -41,7 +41,7 @@ const BlogDetail = () => {
   };
 
   return (
-    <section className="p-5">
+    <section className="container p-5 mx-auto">
       {loading ? (
         <i>Loading...</i>
       ) : (
@@ -52,7 +52,7 @@ const BlogDetail = () => {
             </Link>
             <Breadcrumb.Item>{checkLength(blog.title)}</Breadcrumb.Item>
           </Breadcrumb>
-          <article className="border-b-[1px] border-solid border-[#eee] py-5 px-0">
+          <article className="py-5 px-0">
             <h2 className="section-title">{blog.title}</h2>
             <time className="text-[#999] text-xs">
               {new Date(blog.publishedAt).toLocaleDateString()}

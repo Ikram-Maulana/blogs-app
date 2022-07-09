@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <section className="p-5">
+    <section className="container p-5 mx-auto">
       <h1 className="section-title">Profile</h1>
       <p className="section-description">
         Hello, I'm Ikram Maulana, a Full-stack web developer and UI designer. I

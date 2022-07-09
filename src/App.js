@@ -11,7 +11,7 @@ import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <div className="max-w-[640px] mx-auto grid grid-rows-[auto_1fr_auto] bg-white min-h-screen dark:bg-slate-700 dark:text-slate-200">
+    <div className="mx-auto grid grid-rows-[auto_1fr_auto] bg-white min-h-screen dark:bg-slate-700 dark:text-slate-200">
       <header>
         <NavbarApp />
       </header>

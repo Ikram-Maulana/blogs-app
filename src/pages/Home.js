@@ -3,7 +3,7 @@ import "./style/section.css";
 
 const Home = () => {
   return (
-    <section className="p-5">
+    <section className="container p-5 mx-auto">
       <h1 className="section-title">Welcome to My Website Project</h1>
       <p className="section-description">
         Hello everyone, I am ikram maulana. on this website you can get

@@ -22,7 +22,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="p-5">
+    <section className="container p-5 mx-auto mb-4">
       <h1 className="section-title">Blog</h1>
       <p className="section-description mb-4">
         The following is a list of blogs obtained through the fetch API:
