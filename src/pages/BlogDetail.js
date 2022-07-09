@@ -18,6 +18,7 @@ const BlogDetail = () => {
         const response = await axios.get(
           `https://api.spaceflightnewsapi.net/v3/blogs/${id}`
         );
+        document.title = `${response.data.title} - The React Project`;
         setBlog(response.data);
         setLoading(false);
       } catch (error) {

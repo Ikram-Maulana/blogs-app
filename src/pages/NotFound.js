@@ -1,7 +1,11 @@
 import { Card } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 
 const NotFound = () => {
+  useEffect(() => {
+    document.title = "404 - The React Project";
+  }, []);
+
   return (
     <section className="container p-5 mx-auto">
       <Card>

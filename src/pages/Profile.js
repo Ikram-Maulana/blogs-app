@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Profile = () => {
+  useEffect(() => {
+    document.title = "Profile - The React Project";
+  }, []);
+
   return (
     <section className="container p-5 mx-auto">
       <h1 className="section-title">Profile</h1>

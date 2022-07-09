@@ -1,7 +1,11 @@
 import { ListGroup } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Contact - The React Project";
+  }, []);
+
   return (
     <section className="container p-5 mx-auto">
       <h1 className="section-title">Contact Me</h1>

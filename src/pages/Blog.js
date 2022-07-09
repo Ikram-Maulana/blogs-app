@@ -7,6 +7,7 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Blog - The React Project";
     const getBlogs = async () => {
       try {
         const response = await axios.get(
