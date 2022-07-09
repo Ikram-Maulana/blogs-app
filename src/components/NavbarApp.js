@@ -7,16 +7,18 @@ import "./style/navbarapp.css";
 const NavbarApp = () => {
   return (
     <Navbar fluid={true} rounded={true}>
-      <Navbar.Brand>
-        <img
-          src="/logo192.png"
-          className="mr-3 h-6 sm:h-9 bg-slate-900 rounded-md"
-          alt="Flowbite Logo"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Ikram Web
-        </span>
-      </Navbar.Brand>
+      <div className="navbarBrand">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo192.png"
+            className="mr-3 h-6 sm:h-9 bg-slate-900 rounded-md"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            Ikram Web
+          </span>
+        </Link>
+      </div>
       <Navbar.Toggle />
       <Navbar.Collapse>
         <li className="flex items-center">
