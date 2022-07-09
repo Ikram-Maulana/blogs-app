@@ -5,3 +5,7 @@
 body {
   @apply antialiased font-sans bg-gray-300;
 }
+
+footer {
+  @apply rounded-none !important;
+}

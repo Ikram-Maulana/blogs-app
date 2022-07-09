@@ -25,9 +25,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <footer>
-        <FooterApp />
-      </footer>
+      <FooterApp />
     </div>
   );
 };
