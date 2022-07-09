@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import NotFound from "./NotFound";
+import { Breadcrumb } from "flowbite-react";
+import HiBlog from "../components/HiBlog";
+import slugify from "slugify";
 
 const BlogDetail = () => {
   const [blog, setBlog] = useState({});
@@ -29,20 +32,45 @@ const BlogDetail = () => {
     return <NotFound />;
   }
 
+  const checkLength = (value) => {
+    if (slugify(value).length > 22) {
+      let slug = slugify(value).substring(0, 22) + "...";
+      return slug;
+    }
+    return slugify(value);
+  };
+
   return (
     <section className="p-5">
       {loading ? (
         <i>Loading...</i>
       ) : (
         <div>
-          <article>
-            <h2>{blog.title}</h2>
-            <time>{new Date(blog.publishedAt).toLocaleDateString()}</time>
-            <img src={blog.imageUrl} alt={blog.title} />
-            <p>{blog.summary}</p>
-            <p>
+          <Breadcrumb aria-label="Default breadcrumb example">
+            <Link to="/blog">
+              <Breadcrumb.Item icon={HiBlog}>Blog</Breadcrumb.Item>
+            </Link>
+            <Breadcrumb.Item>{checkLength(blog.title)}</Breadcrumb.Item>
+          </Breadcrumb>
+          <article className="border-b-[1px] border-solid border-[#eee] py-5 px-0">
+            <h2 className="section-title">{blog.title}</h2>
+            <time className="text-[#999] text-xs">
+              {new Date(blog.publishedAt).toLocaleDateString()}
+            </time>
+            <img
+              src={blog.imageUrl}
+              alt={blog.title}
+              className="w-full my-5 max-h-64 object-cover rounded-lg"
+            />
+            <p className="leading-6">{blog.summary}</p>
+            <p className="text-[#999] my-4 font-normal">
               Source:{" "}
-              <a href={blog.url} target="_blank" rel="noreferrer">
+              <a
+                href={blog.url}
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold"
+              >
                 {blog.newsSite}
               </a>
             </p>
